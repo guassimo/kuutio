@@ -49,7 +49,8 @@ void draw() {
     background((int)bg_red, bg_blue, bg_green);
     
     int cameraAngleX = moonlander.getIntValue("camera_angle_x");
-    camera(cameraAngleX, height/2, (height/2) / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
+    int cameraAngleY = moonlander.getIntValue("camera_angle_y");
+    camera(cameraAngleX, cameraAngleY, (height/2) / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
     translate(width/2, height/2, -100);
     stroke(255);
     noFill();
