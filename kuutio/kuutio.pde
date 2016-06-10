@@ -1,5 +1,11 @@
 import moonlander.library.*;
 
+
+/* TODO
+- Add song credits to the show. "Spekkio Beach Party" by djpretzel
+
+*/
+
 // Minim must be imported when using Moonlander with soundtrack.
 import ddf.minim.*;
 
@@ -11,10 +17,10 @@ void setup() {
     // - soundtrack filename (relative to sketch's folder)
     // - beats per minute in the song
     // - how many rows in Rocket correspond to one beat
-    moonlander = Moonlander.initWithSoundtrack(this, "Chrono_Trigger_Spekkio_Beach_Party_OC_ReMix.mp3", 127, 8);
+    moonlander = Moonlander.initWithSoundtrack(this, "Chrono_Trigger_Spekkio_Beach_Party_OC_ReMix.mp3", 256, 8);
 
     // Other initialization code goes here.
-    size(400, 400);
+    size(400, 400, P3D);
 
     // Last thing in setup; start Moonlander. This either
     // connects to Rocket (development mode) or loads data 
@@ -41,6 +47,13 @@ void draw() {
     
     // Use values to control anything (in this case, background color).
     background((int)bg_red, bg_blue, bg_green);
+    
+    int cameraAngleX = moonlander.getIntValue("camera_angle_x");
+    camera(cameraAngleX, height/2, (height/2) / tan(PI/6), width/2, height/2, 0, 0, 1, 0);
+    translate(width/2, height/2, -100);
+    stroke(255);
+    noFill();
+    box(200);
     
     // You can also ask current time and row from Moonlander if you
     // want to do something custom in code based on time.

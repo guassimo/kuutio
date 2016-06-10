@@ -1,0 +1,12 @@
+<sync rows="128">
+	<tracks>
+		<track name="background_red"/>
+		<track name="background_green"/>
+		<track name="background_blue"/>
+		<track name="camera_angle_x">
+			<key value="0" interpolation="1" row="0"/>
+			<key value="400" interpolation="0" row="40"/>
+		</track>
+	</tracks>
+	<bookmarks/>
+</sync>
