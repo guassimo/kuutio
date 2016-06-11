@@ -4,12 +4,16 @@
 		<track name="background_green"/>
 		<track name="background_blue"/>
 		<track name="camera_angle_x">
-			<key row="0" value="0" interpolation="1"/>
-			<key row="72" value="400" interpolation="0"/>
+			<key row="0" interpolation="1" value="0"/>
+			<key row="72" interpolation="0" value="400"/>
 		</track>
 		<track name="camera_angle_y">
-			<key row="0" value="0" interpolation="1"/>
-			<key row="24" value="400" interpolation="0"/>
+			<key row="0" interpolation="1" value="0"/>
+			<key row="24" interpolation="0" value="400"/>
+		</track>
+		<track name="new_cloud_size">
+			<key row="8" interpolation="0" value="15"/>
+			<key row="9" interpolation="0" value="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>
