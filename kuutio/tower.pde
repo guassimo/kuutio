@@ -5,27 +5,28 @@ final int TB_STATE_BOUNCE = 2;
 final int TB_STATE_STILL = 3;
 
 final int TB_SPAWN_INTERVAL = 1000;
-final int TB_COUNT = 100;
-final int TB_PER_LAYER = 10;
+final int TB_COUNT = 1000;
+final int TB_PER_LAYER = 25;
+
+final int TB_TARGET_HEIGHT = 600;
 
 class TowerBlock {
  float angle;
+ float angleDistort;
  float radius;
+ float hue;
  float y;
  int state;
- 
- TowerBlock() {
-   angle = 0;
-   radius = 0;
-   y = 0;
-   state = TB_STATE_NONE;
- }
+ double refTime;
 
- TowerBlock(float newAngle, float newRadius) {
+ TowerBlock(float newAngle, float newAngleDistort, float newRadius, double newRefTime, float newHue) {
    angle = newAngle;
+   angleDistort = newAngleDistort;
    radius = newRadius;
-   y = 100;
+   hue = newHue;
+   y = -100;
    state = TB_STATE_FALLING;
+   refTime = newRefTime;
  }
 }
 
@@ -33,9 +34,10 @@ class TowerBlock {
 TowerBlock[] tblocks = new TowerBlock[TB_COUNT];
 int tblockIndexSpawnNext = 0;
 double tblockLastSpawned = -1;
+float totalAngleOffset = 0;
 
 void drawTower() {
-  
+    
   /***********
    TOWER OF BRICKS
    ***********/
@@ -43,13 +45,14 @@ void drawTower() {
   // params
   //  - number of active blocks
   //  - radius distortion amount
-  //  - radius distortion mode or something
   //  - global tower rotation
   
   // spawn a new block
-  if (tblockLastSpawned < 0 || moonlander.getCurrentTime() - tblockLastSpawned > 1) {
+  if (tblockLastSpawned < 0 || moonlander.getCurrentTime() - tblockLastSpawned > (1.0 / moonlander.getIntValue("tblocks_per_second"))) {
     tblockLastSpawned = moonlander.getCurrentTime();
-    tblocks[tblockIndexSpawnNext] = new TowerBlock(PI/TB_PER_LAYER * tblockIndexSpawnNext % TB_PER_LAYER, 200);
+    totalAngleOffset += TWO_PI/TB_PER_LAYER * 0.02;
+    float newRadius = 200 + (float)moonlander.getValue("tblocks_radius_distortion_amplitude") * sin((float)moonlander.getValue("tblocks_radius_distortion_frequency") * (float)moonlander.getCurrentTime());
+    tblocks[tblockIndexSpawnNext] = new TowerBlock(TWO_PI/TB_PER_LAYER * (tblockIndexSpawnNext % TB_PER_LAYER) + totalAngleOffset, (float)random(-TWO_PI/TB_PER_LAYER/2, TWO_PI/TB_PER_LAYER/2), newRadius, tblockLastSpawned, random(195,220));
     tblockIndexSpawnNext = (tblockIndexSpawnNext + 1) % TB_COUNT;
   }
   
@@ -60,15 +63,23 @@ void drawTower() {
     
     switch (block.state) {
       case TB_STATE_FALLING:
-        //  - y
-        //  - state (falling, bounce, still, none)
-        //  - time ref
+        block.y = 1000 * (float)(moonlander.getCurrentTime() - block.refTime);
+        if (block.y > TB_TARGET_HEIGHT) {
+          block.y = TB_TARGET_HEIGHT;
+          block.state = TB_STATE_BOUNCE;
+          block.refTime = moonlander.getCurrentTime();
+        }
         break;
       case TB_STATE_BOUNCE:
-      
+        block.y = TB_TARGET_HEIGHT -100 + 10000 * (float)Math.pow((moonlander.getCurrentTime() - block.refTime - 0.1), 2);
+        if (block.y > TB_TARGET_HEIGHT) {
+          block.y = TB_TARGET_HEIGHT;
+          block.state = TB_STATE_STILL;
+          block.refTime = moonlander.getCurrentTime();
+        }
         break;
       case TB_STATE_STILL:
-      
+        block.y = TB_TARGET_HEIGHT + (moonlander.getIntValue("tblocks_per_second") * TB_PER_LAYER / moonlander.getIntValue("tblocks_per_second")) * (float)(moonlander.getCurrentTime() - block.refTime);;
         break;
       default:
         // nothing
@@ -77,11 +88,12 @@ void drawTower() {
     // draw blocks
     if (block.state != TB_STATE_NONE) {
       pushMatrix();
-      translate(width/2 + block.radius * sin(block.angle), 3*height/4, block.radius * cos(block.angle));
-      rotateY(block.angle);
+      translate(width/2 + block.radius * sin(block.angle), block.y, 300 + block.radius * cos(block.angle));
+      rotateY(block.angle + block.angleDistort);
       stroke(255);
-      noFill();
-      box(50);
+      //noFill();
+      fill(block.hue, 105, 68);
+      box(50, 25, 25);
       popMatrix();
     }
   }
@@ -123,6 +135,7 @@ void drawTower() {
   /*
   int cameraAngleX = moonlander.getIntValue("camera_angle_x");
   int cameraAngleY = moonlander.getIntValue("camera_angle_y");*/
+  camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0) + 500, width/2.0, height/2.0, 0, 0, 1, 0);
   //camera(width/2.0, 0, 2 * (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
   /*translate(width/2, height/2, -100);
   stroke(255);
