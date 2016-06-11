@@ -1,0 +1,100 @@
+<sync rows="5000">
+	<tracks>
+		<track name="tblocks_per_second">
+			<key row="0" value="1" interpolation="0"/>
+			<key row="400" value="1" interpolation="2"/>
+			<key row="416" value="10" interpolation="0"/>
+			<key row="1568" value="10" interpolation="2"/>
+			<key row="1584" value="50" interpolation="0"/>
+			<key row="3688" value="10000" interpolation="0"/>
+		</track>
+		<track name="tblocks_fall_speed">
+			<key row="0" value="0" interpolation="0"/>
+			<key row="400" value="1" interpolation="2"/>
+			<key row="416" value="10" interpolation="0"/>
+			<key row="1568" value="10" interpolation="2"/>
+			<key row="1584" value="25" interpolation="0"/>
+			<key row="3688" value="1000" interpolation="0"/>
+		</track>
+		<track name="tblocks_radius_distortion_amplitude">
+			<key row="0" value="5" interpolation="2"/>
+			<key row="256" value="10" interpolation="0"/>
+			<key row="3688" value="1000" interpolation="0"/>
+		</track>
+		<track name="tblocks_radius_distortion_frequency">
+			<key row="0" value="10000" interpolation="2"/>
+			<key row="256" value="50" interpolation="0"/>
+			<key row="3688" value="100" interpolation="0"/>
+		</track>
+		<track name="camera_radius">
+			<key row="0" value="300" interpolation="2"/>
+			<key row="408" value="500" interpolation="2"/>
+			<key row="1584" value="1000" interpolation="0"/>
+		</track>
+		<track name="camera_angle">
+			<key row="0" value="0" interpolation="1"/>
+			<key row="408" value="0" interpolation="0"/>
+			<key row="1584" value="0" interpolation="2"/>
+			<key row="3688" value="6.28" interpolation="0"/>
+		</track>
+		<track name="new_cloud_size">
+			<key row="128" value="11" interpolation="0"/>
+			<key row="416" value="10" interpolation="0"/>
+			<key row="424" value="11" interpolation="0"/>
+			<key row="432" value="10" interpolation="0"/>
+			<key row="440" value="11" interpolation="0"/>
+			<key row="448" value="10" interpolation="0"/>
+			<key row="456" value="11" interpolation="0"/>
+			<key row="464" value="10" interpolation="0"/>
+			<key row="480" value="10" interpolation="0"/>
+			<key row="488" value="11" interpolation="0"/>
+			<key row="496" value="10" interpolation="0"/>
+			<key row="512" value="10" interpolation="0"/>
+			<key row="520" value="11" interpolation="0"/>
+			<key row="528" value="10" interpolation="0"/>
+			<key row="1472" value="12" interpolation="0"/>
+			<key row="1552" value="11" interpolation="0"/>
+			<key row="1584" value="10" interpolation="0"/>
+			<key row="1664" value="11" interpolation="0"/>
+			<key row="1728" value="11" interpolation="0"/>
+			<key row="1776" value="10" interpolation="0"/>
+			<key row="1848" value="12" interpolation="0"/>
+			<key row="1872" value="10" interpolation="0"/>
+			<key row="2000" value="10" interpolation="0"/>
+			<key row="2088" value="12" interpolation="0"/>
+			<key row="2096" value="10" interpolation="0"/>
+			<key row="2192" value="10" interpolation="0"/>
+			<key row="2336" value="11" interpolation="0"/>
+			<key row="2384" value="10" interpolation="0"/>
+			<key row="2454" value="12" interpolation="0"/>
+			<key row="2480" value="10" interpolation="0"/>
+			<key row="2576" value="10" interpolation="0"/>
+			<key row="2678" value="12" interpolation="0"/>
+			<key row="2720" value="10" interpolation="0"/>
+			<key row="2768" value="11" interpolation="0"/>
+			<key row="2912" value="10" interpolation="0"/>
+			<key row="3008" value="10" interpolation="0"/>
+			<key row="3104" value="10" interpolation="0"/>
+			<key row="3200" value="10" interpolation="0"/>
+			<key row="3296" value="10" interpolation="0"/>
+			<key row="3392" value="10" interpolation="0"/>
+			<key row="3488" value="10" interpolation="0"/>
+			<key row="3584" value="10" interpolation="0"/>
+			<key row="3680" value="10" interpolation="0"/>
+		</track>
+		<track name="title_visible">
+			<key row="0" value="1" interpolation="0"/>
+			<key row="408" value="0" interpolation="0"/>
+		</track>
+		<track name="credits_visible">
+			<key row="3857" value="1" interpolation="0"/>
+		</track>
+		<track name="camera_shake_amplitude">
+			<key row="3688" value="50" interpolation="0"/>
+		</track>
+		<track name="show_finished">
+			<key row="4408" value="1" interpolation="0"/>
+		</track>
+	</tracks>
+	<bookmarks/>
+</sync>

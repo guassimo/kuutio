@@ -21,8 +21,9 @@ void draw() {
   lightSpecular(0, 0, 0);
   
   if (moonlander.getValue("credits_visible") == 0) {
-    drawBackground();
+    background(128, 128, 255);
     drawTower();
+    drawBackground();
     
     if (moonlander.getValue("title_visible") > 0) {
       textSize(100);

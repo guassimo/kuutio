@@ -37,7 +37,8 @@ double tblockLastSpawned = -1;
 float totalAngleOffset = 0;
 
 void drawTower() {
-    
+  if (moonlander.getValue("tblocks_per_second") <= 0) return;
+  
   /***********
    TOWER OF BRICKS
    ***********/
@@ -46,7 +47,7 @@ void drawTower() {
   //  - global tower rotation (todo)
   
   // spawn a new block
-  if (tblockLastSpawned < 0 || moonlander.getCurrentTime() - tblockLastSpawned > (1.0 / moonlander.getIntValue("tblocks_per_second"))) {
+  if (tblockLastSpawned < 0 || (moonlander.getCurrentTime() - tblockLastSpawned) > 1 / moonlander.getValue("tblocks_per_second")) {
     tblockLastSpawned = moonlander.getCurrentTime();
     totalAngleOffset += TWO_PI/TB_PER_LAYER * 0.02;
     float newRadius = 200 + (float)moonlander.getValue("tblocks_radius_distortion_amplitude") * sin((float)moonlander.getValue("tblocks_radius_distortion_frequency") * (float)moonlander.getCurrentTime());
