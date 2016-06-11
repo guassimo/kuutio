@@ -10,7 +10,7 @@ Moonlander moonlander;
 
 void setup() {
     moonlander = Moonlander.initWithSoundtrack(this, "Chrono_Trigger_Spekkio_Beach_Party_OC_ReMix.mp3", 127, 8);
-    size(400, 400, P3D);
+    size(1440, 900, P3D);
     moonlander.start();
 }
 
