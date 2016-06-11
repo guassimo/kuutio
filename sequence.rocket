@@ -4,31 +4,35 @@
 		<track name="background_green"/>
 		<track name="background_blue"/>
 		<track name="camera_angle_x">
-			<key interpolation="1" row="0" value="0"/>
-			<key interpolation="0" row="72" value="400"/>
+			<key value="0" row="0" interpolation="1"/>
+			<key value="400" row="72" interpolation="0"/>
 		</track>
 		<track name="camera_angle_y">
-			<key interpolation="1" row="0" value="0"/>
-			<key interpolation="0" row="24" value="400"/>
+			<key value="0" row="0" interpolation="1"/>
+			<key value="400" row="24" interpolation="0"/>
 		</track>
 		<track name="tblocks_per_second">
-			<key interpolation="0" row="0" value="25"/>
+			<key value="25" row="0" interpolation="0"/>
 		</track>
 		<track name="tblocks_radius_distortion_amplitude">
-			<key interpolation="2" row="0" value="100"/>
-			<key interpolation="0" row="256" value="10"/>
+			<key value="100" row="0" interpolation="2"/>
+			<key value="10" row="256" interpolation="0"/>
 		</track>
 		<track name="tblocks_radius_distortion_frequency">
-			<key interpolation="2" row="0" value="100"/>
-			<key interpolation="0" row="256" value="50"/>
+			<key value="100" row="0" interpolation="2"/>
+			<key value="50" row="256" interpolation="0"/>
 		</track>
 		<track name="camera_radius">
-			<key interpolation="2" row="0" value="0"/>
-			<key interpolation="0" row="240" value="900"/>
+			<key value="0" row="0" interpolation="2"/>
+			<key value="900" row="240" interpolation="0"/>
 		</track>
 		<track name="camera_angle">
-			<key interpolation="1" row="0" value="0"/>
-			<key interpolation="0" row="1279" value="6"/>
+			<key value="0" row="0" interpolation="1"/>
+			<key value="6" row="1279" interpolation="0"/>
+		</track>
+		<track name="new_cloud_size">
+			<key value="30" row="264" interpolation="0"/>
+			<key value="0" row="265" interpolation="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>
