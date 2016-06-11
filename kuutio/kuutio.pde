@@ -30,5 +30,5 @@ void draw() {
     creditsLayer.text("Programming: guassimo & onoki", 10, 90);
     creditsLayer.text("Music: Spekkio's Beach Party by djpretzel", 10, 120);
     creditsLayer.endDraw();
-    image(creditsLayer,-width,-height);
+    image(creditsLayer, 0, 0);
 }
