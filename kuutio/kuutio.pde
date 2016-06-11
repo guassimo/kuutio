@@ -24,6 +24,7 @@ void draw() {
     
     // credits
     creditsLayer.beginDraw();
+    creditsLayer.background(000);
     creditsLayer.textSize(24);
     creditsLayer.text("Time: " + String.format("%.2f", moonlander.getCurrentTime()), 10, 30);
     creditsLayer.text("Row: " + String.format("%.2f", moonlander.getCurrentRow()), 10, 60);
