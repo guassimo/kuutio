@@ -10,7 +10,7 @@ Moonlander moonlander;
 PGraphics creditsLayer;
 
 void setup() {
-    moonlander = Moonlander.initWithSoundtrack(this, "Chrono_Trigger_Spekkio_Beach_Party_OC_ReMix.mp3", 127, 8);
+    moonlander = Moonlander.initWithSoundtrack(this, "Chrono_Trigger_Spekkio_Beach_Party_OC_ReMix.mp3", 127, 32);
     size(1440, 900, P3D);
     creditsLayer = createGraphics(width,height);
     moonlander.start();

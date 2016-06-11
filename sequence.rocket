@@ -1,15 +1,26 @@
-<sync rows="128">
+<sync rows="1280">
 	<tracks>
 		<track name="background_red"/>
 		<track name="background_green"/>
 		<track name="background_blue"/>
 		<track name="camera_angle_x">
-			<key row="0" value="0" interpolation="1"/>
-			<key row="72" value="400" interpolation="0"/>
+			<key interpolation="1" row="0" value="0"/>
+			<key interpolation="0" row="72" value="400"/>
 		</track>
 		<track name="camera_angle_y">
-			<key row="0" value="0" interpolation="1"/>
-			<key row="24" value="400" interpolation="0"/>
+			<key interpolation="1" row="0" value="0"/>
+			<key interpolation="0" row="24" value="400"/>
+		</track>
+		<track name="tblocks_per_second">
+			<key interpolation="0" row="0" value="25"/>
+		</track>
+		<track name="tblocks_radius_distortion_amplitude">
+			<key interpolation="2" row="0" value="100"/>
+			<key interpolation="0" row="256" value="10"/>
+		</track>
+		<track name="tblocks_radius_distortion_frequency">
+			<key interpolation="2" row="0" value="100"/>
+			<key interpolation="0" row="256" value="50"/>
 		</track>
 	</tracks>
 	<bookmarks/>
