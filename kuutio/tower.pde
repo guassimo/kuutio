@@ -3,12 +3,11 @@ final int TB_STATE_NONE = 0;
 final int TB_STATE_FALLING = 1;
 final int TB_STATE_BOUNCE = 2;
 final int TB_STATE_STILL = 3;
-
 final int TB_SPAWN_INTERVAL = 1000;
 final int TB_COUNT = 1000;
 final int TB_PER_LAYER = 25;
-
 final int TB_TARGET_HEIGHT = 600;
+final int TB_TOWER_CENTER_Z = 1000;
 
 class TowerBlock {
  float angle;
@@ -79,7 +78,7 @@ void drawTower() {
         }
         break;
       case TB_STATE_STILL:
-        block.y = TB_TARGET_HEIGHT + (moonlander.getIntValue("tblocks_per_second") * TB_PER_LAYER / moonlander.getIntValue("tblocks_per_second")) * (float)(moonlander.getCurrentTime() - block.refTime);;
+        block.y = TB_TARGET_HEIGHT + (moonlander.getIntValue("tblocks_per_second") * TB_PER_LAYER / moonlander.getIntValue("tblocks_per_second")) * (float)(moonlander.getCurrentTime() - block.refTime);
         break;
       default:
         // nothing
@@ -88,10 +87,9 @@ void drawTower() {
     // draw blocks
     if (block.state != TB_STATE_NONE) {
       pushMatrix();
-      translate(width/2 + block.radius * sin(block.angle), block.y, 300 + block.radius * cos(block.angle));
+      translate(width/2 + block.radius * sin(block.angle), block.y, TB_TOWER_CENTER_Z + block.radius * cos(block.angle));
       rotateY(block.angle + block.angleDistort);
-      stroke(255);
-      //noFill();
+      stroke(76, 40, 26);
       fill(block.hue, 105, 68);
       box(50, 25, 25);
       popMatrix();
@@ -132,13 +130,8 @@ void drawTower() {
   //  - camera horizontal distortion frequency
   //  - camera horizontal distortion amplitude
   
-  /*
-  int cameraAngleX = moonlander.getIntValue("camera_angle_x");
-  int cameraAngleY = moonlander.getIntValue("camera_angle_y");*/
-  camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0) + 500, width/2.0, height/2.0, 0, 0, 1, 0);
-  //camera(width/2.0, 0, 2 * (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
-  /*translate(width/2, height/2, -100);
-  stroke(255);
-  noFill();
-  box(200);*/
+  camera( width/2.0 + (float)moonlander.getValue("camera_radius") * cos((float)moonlander.getValue("camera_angle")), height/2.0, TB_TOWER_CENTER_Z + (float)moonlander.getValue("camera_radius") * sin((float)moonlander.getValue("camera_angle")), 
+          width/2.0, height/2.0, TB_TOWER_CENTER_Z, 
+          0, 1, 0);
+  //camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0) + 500, width/2.0, height/2.0, 0, 0, 1, 0);
 }

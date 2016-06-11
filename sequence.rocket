@@ -22,6 +22,14 @@
 			<key interpolation="2" row="0" value="100"/>
 			<key interpolation="0" row="256" value="50"/>
 		</track>
+		<track name="camera_radius">
+			<key interpolation="2" row="0" value="0"/>
+			<key interpolation="0" row="240" value="900"/>
+		</track>
+		<track name="camera_angle">
+			<key interpolation="1" row="0" value="0"/>
+			<key interpolation="0" row="1279" value="6"/>
+		</track>
 	</tracks>
 	<bookmarks/>
 </sync>
