@@ -11,7 +11,7 @@ PGraphics creditsLayer;
 
 void setup() {
     moonlander = Moonlander.initWithSoundtrack(this, "Chrono_Trigger_Spekkio_Beach_Party_OC_ReMix.mp3", 127, 32);
-    size(1440, 900, P3D);
+    size(1340, 800, P3D);
     creditsLayer = createGraphics(width,height);
     moonlander.start();
 }
@@ -24,6 +24,7 @@ void draw() {
     
     // credits
     creditsLayer.beginDraw();
+    creditsLayer.background(000);
     creditsLayer.textSize(24);
     creditsLayer.text("Time: " + String.format("%.2f", moonlander.getCurrentTime()), 10, 30);
     creditsLayer.text("Row: " + String.format("%.2f", moonlander.getCurrentRow()), 10, 60);
