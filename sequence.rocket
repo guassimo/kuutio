@@ -4,35 +4,74 @@
 		<track name="background_green"/>
 		<track name="background_blue"/>
 		<track name="camera_angle_x">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="400" row="72" interpolation="0"/>
+			<key row="0" value="0" interpolation="1"/>
+			<key row="72" value="400" interpolation="0"/>
 		</track>
 		<track name="camera_angle_y">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="400" row="24" interpolation="0"/>
+			<key row="0" value="0" interpolation="1"/>
+			<key row="24" value="400" interpolation="0"/>
 		</track>
 		<track name="tblocks_per_second">
-			<key value="25" row="0" interpolation="0"/>
+			<key row="0" value="25" interpolation="0"/>
 		</track>
 		<track name="tblocks_radius_distortion_amplitude">
-			<key value="100" row="0" interpolation="2"/>
-			<key value="10" row="256" interpolation="0"/>
+			<key row="0" value="100" interpolation="2"/>
+			<key row="256" value="10" interpolation="0"/>
 		</track>
 		<track name="tblocks_radius_distortion_frequency">
-			<key value="100" row="0" interpolation="2"/>
-			<key value="50" row="256" interpolation="0"/>
+			<key row="0" value="100" interpolation="2"/>
+			<key row="256" value="50" interpolation="0"/>
 		</track>
 		<track name="camera_radius">
-			<key value="0" row="0" interpolation="2"/>
-			<key value="900" row="240" interpolation="0"/>
+			<key row="0" value="900" interpolation="2"/>
+			<key row="240" value="900" interpolation="0"/>
 		</track>
 		<track name="camera_angle">
-			<key value="0" row="0" interpolation="1"/>
-			<key value="6" row="1279" interpolation="0"/>
+			<key row="0" value="1.6" interpolation="1"/>
 		</track>
 		<track name="new_cloud_size">
-			<key value="30" row="264" interpolation="0"/>
-			<key value="0" row="265" interpolation="0"/>
+			<key row="0" value="0" interpolation="0"/>
+			<key row="168" value="80" interpolation="0"/>
+			<key row="169" value="80" interpolation="0"/>
+			<key row="170" value="80" interpolation="0"/>
+			<key row="171" value="80" interpolation="0"/>
+			<key row="172" value="80" interpolation="0"/>
+			<key row="173" value="80" interpolation="0"/>
+			<key row="174" value="80" interpolation="0"/>
+			<key row="175" value="80" interpolation="0"/>
+			<key row="176" value="80" interpolation="0"/>
+			<key row="177" value="80" interpolation="0"/>
+			<key row="178" value="80" interpolation="0"/>
+			<key row="179" value="80" interpolation="0"/>
+			<key row="180" value="80" interpolation="0"/>
+			<key row="181" value="80" interpolation="0"/>
+			<key row="182" value="80" interpolation="0"/>
+			<key row="183" value="80" interpolation="0"/>
+			<key row="264" value="70" interpolation="0"/>
+			<key row="265" value="70" interpolation="0"/>
+			<key row="266" value="70" interpolation="0"/>
+			<key row="267" value="70" interpolation="0"/>
+			<key row="268" value="70" interpolation="0"/>
+			<key row="269" value="70" interpolation="0"/>
+			<key row="270" value="70" interpolation="0"/>
+			<key row="271" value="70" interpolation="0"/>
+			<key row="272" value="70" interpolation="0"/>
+			<key row="273" value="70" interpolation="0"/>
+			<key row="274" value="70" interpolation="0"/>
+			<key row="275" value="70" interpolation="0"/>
+			<key row="276" value="70" interpolation="0"/>
+			<key row="277" value="70" interpolation="0"/>
+			<key row="278" value="70" interpolation="0"/>
+			<key row="279" value="70" interpolation="0"/>
+			<key row="280" value="70" interpolation="0"/>
+			<key row="400" value="51" interpolation="0"/>
+			<key row="401" value="0" interpolation="0"/>
+			<key row="648" value="50" interpolation="0"/>
+			<key row="649" value="0" interpolation="0"/>
+			<key row="920" value="60" interpolation="0"/>
+			<key row="921" value="0" interpolation="0"/>
+			<key row="1278" value="50" interpolation="0"/>
+			<key row="1279" value="0" interpolation="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>
