@@ -95,6 +95,9 @@
 		<track name="show_finished">
 			<key row="4408" value="1" interpolation="0"/>
 		</track>
+		<track name="spawn_ball">
+			<key row="320" value="1" interpolation="0"/>
+		</track>
 	</tracks>
 	<bookmarks/>
 </sync>

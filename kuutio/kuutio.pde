@@ -23,6 +23,8 @@ void draw() {
   if (moonlander.getValue("credits_visible") == 0) {
     background(128, 128, 255);
     drawTower();
+    drawStairs();
+    drawBall();
     drawBackground();
     
     if (moonlander.getValue("title_visible") > 0) {
